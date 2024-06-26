@@ -1,0 +1,9 @@
+{
+  "name": "renovate-config",
+  "version": "1.0.0",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@thelabnyc/standards": "^0.1.6"
+  }
+}
