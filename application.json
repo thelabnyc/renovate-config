@@ -1,15 +1,26 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["gitlab>thelabnyc/renovate-config:default"],
-    "rangeStrategy": "bump",
     "lockFileMaintenance": {
         "enabled": true,
         "schedule": ["before 9am on wednesday"]
     },
     "packageRules": [
         {
-            "excludeDepNames": ["prettier"],
+            "matchDepNames": ["prettier"],
             "allowedVersions": "<=3.1.0"
+        },
+        {
+            "matchDepNames": ["python"],
+            "allowedVersions": "<=3.12"
+        },
+        {
+            "matchDepNames": ["Django", "django"],
+            "allowedVersions": "<=4.2"
+        },
+        {
+            "matchDepNames": ["wagtail"],
+            "allowedVersions": "<=5.2"
         }
     ]
 }

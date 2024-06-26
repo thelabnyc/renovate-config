@@ -8,19 +8,19 @@
     },
     "packageRules": [
         {
-            "excludeDepNames": ["prettier"],
+            "matchDepNames": ["prettier"],
             "allowedVersions": "<=3.1.0"
         },
         {
-            "excludeDepNames": ["python"],
+            "matchDepNames": ["python"],
             "allowedVersions": "<=3.10"
         },
         {
-            "excludeDepNames": ["Django"],
+            "matchDepNames": ["Django", "django"],
             "allowedVersions": "<=4.2"
         },
         {
-            "excludeDepNames": ["wagtail"],
+            "matchDepNames": ["wagtail"],
             "allowedVersions": "<=5.2"
         }
     ]
