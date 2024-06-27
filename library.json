@@ -13,7 +13,7 @@
         },
         {
             "matchDepNames": ["python"],
-            "allowedVersions": "<=3.10"
+            "allowedVersions": "<=3.10.0"
         },
         {
             "matchDepNames": ["Django", "django"],
