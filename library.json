@@ -8,6 +8,10 @@
     },
     "packageRules": [
         {
+            "matchDepNames": ["npm"],
+            "allowedVersions": "<=9"
+        },
+        {
             "matchDepNames": ["node.js"],
             "allowedVersions": "<=20"
         },
