@@ -1,5 +1,20 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["config:recommended"],
-    "timezone": "America/New_York"
+    "timezone": "America/New_York",
+    "packageRules": [
+        {
+            "matchDatasources": ["docker"],
+            "matchPackageNames": [
+                "registry.gitlab.com/thelabnyc/dind",
+                "registry.gitlab.com/thelabnyc/docker-postgis",
+                "registry.gitlab.com/thelabnyc/emtek/blender",
+                "registry.gitlab.com/thelabnyc/ops-utils",
+                "registry.gitlab.com/thelabnyc/python",
+                "registry.gitlab.com/thelabnyc/thelab-dev-utils",
+                "registry.gitlab.com/thelabnyc/thelab-ui-bakery"
+            ],
+            "versioning": "loose"
+        }
+    ]
 }
