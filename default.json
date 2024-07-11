@@ -15,6 +15,10 @@
                 "registry.gitlab.com/thelabnyc/thelab-ui-bakery"
             ],
             "versioning": "loose"
+        },
+        {
+            "matchDepNames": ["prettier"],
+            "allowedVersions": "<=3.1.0"
         }
     ]
 }

@@ -16,10 +16,6 @@
             "rangeStrategy": "replace"
         },
         {
-            "matchDepNames": ["prettier"],
-            "allowedVersions": "<=3.1.0"
-        },
-        {
             "matchDepNames": ["python"],
             "allowedVersions": "<=3.12",
             "rangeStrategy": "replace"
