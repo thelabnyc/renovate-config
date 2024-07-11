@@ -11,8 +11,9 @@
             "allowedVersions": "<=9"
         },
         {
-            "matchDepNames": ["node.js"],
-            "allowedVersions": "<=20"
+            "matchDepNames": ["node.js", "node"],
+            "allowedVersions": "<=20",
+            "rangeStrategy": "replace"
         },
         {
             "matchDepNames": ["prettier"],
@@ -20,7 +21,8 @@
         },
         {
             "matchDepNames": ["python"],
-            "allowedVersions": "<=3.12"
+            "allowedVersions": "<=3.12",
+            "rangeStrategy": "replace"
         },
         {
             "matchDepNames": ["Django", "django"],
