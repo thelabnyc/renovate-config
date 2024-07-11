@@ -6,15 +6,21 @@
         {
             "matchDatasources": ["docker"],
             "matchPackageNames": [
-                "registry.gitlab.com/thelabnyc/dind",
-                "registry.gitlab.com/thelabnyc/docker-postgis",
-                "registry.gitlab.com/thelabnyc/emtek/blender",
-                "registry.gitlab.com/thelabnyc/ops-utils",
-                "registry.gitlab.com/thelabnyc/python",
-                "registry.gitlab.com/thelabnyc/thelab-dev-utils",
-                "registry.gitlab.com/thelabnyc/thelab-ui-bakery"
+                "registry.gitlab.com/thelabnyc/docker-postgis"
             ],
-            "versioning": "loose"
+            "versioning": "regex:^(?<major>\\d+)-(?<minor>\\d+)\\.(?<patch>\\d+)?$"
+        },
+        {
+            "matchDatasources": ["docker"],
+            "matchPackageNames": [
+                "registry.gitlab.com/thelabnyc/emtek/blender"
+            ],
+            "versioning": "regex:^ubuntu(?<major>\\d+)\\.(?<minor>\\d+)-.+$"
+        },
+        {
+            "matchDatasources": ["docker"],
+            "matchPackageNames": ["registry.gitlab.com/thelabnyc/python"],
+            "versioning": "regex:^py(?<major>\\d)(?<minor>\\d{2})(-(?<compatibility>node)\\d{2})?$"
         },
         {
             "matchDepNames": ["prettier"],
