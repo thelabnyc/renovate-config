@@ -21,10 +21,6 @@
             "matchDatasources": ["docker"],
             "matchPackageNames": ["registry.gitlab.com/thelabnyc/python"],
             "versioning": "regex:^py(?<major>\\d)(?<minor>\\d{2})(-(?<compatibility>node)\\d{2})?$"
-        },
-        {
-            "matchDepNames": ["prettier"],
-            "allowedVersions": "<=3.1.0"
         }
     ]
 }
