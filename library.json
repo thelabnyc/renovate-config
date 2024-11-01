@@ -9,7 +9,7 @@
     "packageRules": [
         {
             "matchDepNames": ["npm"],
-            "allowedVersions": "<=9"
+            "allowedVersions": "<=10"
         },
         {
             "matchDepNames": ["node.js", "node"],
@@ -27,7 +27,7 @@
         },
         {
             "matchDepNames": ["wagtail"],
-            "allowedVersions": "<=5.2"
+            "allowedVersions": "<=6.3"
         }
     ]
 }

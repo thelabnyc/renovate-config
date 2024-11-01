@@ -8,7 +8,7 @@
     "packageRules": [
         {
             "matchDepNames": ["npm"],
-            "allowedVersions": "<=9"
+            "allowedVersions": "<=10"
         },
         {
             "matchDepNames": ["node.js", "node"],
@@ -17,7 +17,7 @@
         },
         {
             "matchDepNames": ["python"],
-            "allowedVersions": "<=3.12",
+            "allowedVersions": "<=3.13",
             "rangeStrategy": "replace"
         }
     ]
