@@ -4,6 +4,6 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@thelabnyc/standards": "^0.4.0"
+    "@thelabnyc/standards": "^0.4.1"
   }
 }
