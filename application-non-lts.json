@@ -8,11 +8,11 @@
     "packageRules": [
         {
             "matchDepNames": ["npm"],
-            "allowedVersions": "<=10"
+            "allowedVersions": "<=11"
         },
         {
             "matchDepNames": ["node.js", "node"],
-            "allowedVersions": "<=20",
+            "allowedVersions": "<=22",
             "rangeStrategy": "replace"
         },
         {
