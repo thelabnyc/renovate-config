@@ -16,6 +16,13 @@
                 "registry.gitlab.com/thelabnyc/emtek/blender"
             ],
             "versioning": "regex:^ubuntu.+blender(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
+        },
+        {
+            "matchCurrentVersion": ">=8.0.0",
+            "matchDatasources": ["npm"],
+            "matchPackageNames": ["typed-scss-modules"],
+            "replacementName": "@thelabnyc/typed-scss-modules",
+            "replacementVersion": "8.2.0"
         }
     ]
 }
