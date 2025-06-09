@@ -27,7 +27,7 @@
         },
         {
             "matchDepNames": ["wagtail"],
-            "allowedVersions": "<=6.3"
+            "allowedVersions": "<=7.0"
         }
     ]
 }

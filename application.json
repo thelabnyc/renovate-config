@@ -22,11 +22,11 @@
         },
         {
             "matchDepNames": ["Django", "django"],
-            "allowedVersions": "<=5.2"
+            "allowedVersions": "<5.3"
         },
         {
             "matchDepNames": ["wagtail"],
-            "allowedVersions": "<=6.3"
+            "allowedVersions": "<7.1"
         }
     ]
 }
