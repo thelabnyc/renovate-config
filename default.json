@@ -23,6 +23,12 @@
             "matchPackageNames": ["typed-scss-modules"],
             "replacementName": "@thelabnyc/typed-scss-modules",
             "replacementVersion": "8.2.0"
+        },
+        {
+            "matchDatasources": ["npm"],
+            "matchPackageNames": ["breakpoint-sass"],
+            "replacementName": "@thelabnyc/breakpoint-sass",
+            "replacementVersion": "3.0.1"
         }
     ]
 }
