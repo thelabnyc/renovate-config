@@ -30,5 +30,15 @@
             "replacementName": "@thelabnyc/breakpoint-sass",
             "replacementVersion": "3.0.1"
         }
+    ],
+    "customManagers": [
+        {
+            "customType": "regex",
+            "managerFilePatterns": ["/.+\\.yml$/"],
+            "matchStrings": ["UV_VERSION:\\s\"?(?<currentValue>.+)\"?"],
+            "datasourceTemplate": "pypi",
+            "packageNameTemplate": "uv",
+            "versioningTemplate": "pep440"
+        }
     ]
 }
