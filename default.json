@@ -35,6 +35,10 @@
             "matchPackageNames": ["breakpoint-sass"],
             "replacementName": "@thelabnyc/breakpoint-sass",
             "replacementVersion": "3.0.1"
+        },
+        {
+            "matchPackageNames": ["hashicorp/terraform"],
+            "allowedVersions": "<=1.5.7"
         }
     ],
     "customManagers": [
