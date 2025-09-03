@@ -1,9 +1,14 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["config:best-practices", ":preserveSemverRanges"],
+    "extends": ["config:best-practices"],
     "timezone": "America/New_York",
     "rangeStrategy": "bump",
     "packageRules": [
+        {
+            "matchPackageNames": ["*"],
+            "matchDatasources": ["npm"],
+            "rangeStrategy": "replace"
+        },
         {
             "matchDatasources": ["docker"],
             "matchPackageNames": [
