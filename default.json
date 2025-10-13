@@ -3,6 +3,7 @@
     "extends": ["config:best-practices"],
     "timezone": "America/New_York",
     "rangeStrategy": "bump",
+    "postUpdateOptions": ["npmDedupe", "npmInstallTwice"],
     "packageRules": [
         {
             "matchPackageNames": ["*"],
