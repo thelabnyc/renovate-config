@@ -41,6 +41,28 @@
         {
             "matchPackageNames": ["hashicorp/terraform"],
             "allowedVersions": "<=1.5.7"
+        },
+        {
+            "matchPackageNames": ["/python/"],
+            "matchUpdateTypes": ["digest"],
+            "groupName": "docker-python"
+        },
+        {
+            "matchPackageNames": ["/eslint/"],
+            "groupName": "eslint"
+        },
+        {
+            "matchPackageNames": ["/boto3/", "/botocore/"],
+            "groupName": "boto",
+            "schedule": ["before 8am on monday"]
+        },
+        {
+            "matchPackageNames": ["/thelabui/"],
+            "groupName": "thelabui"
+        },
+        {
+            "matchPackageNames": ["/tox/"],
+            "groupName": "tox"
         }
     ],
     "customManagers": [
