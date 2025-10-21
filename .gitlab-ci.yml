@@ -2,7 +2,7 @@ stages:
   - lint
 
 .base_job: &base_job
-  image: registry.gitlab.com/thelabnyc/python:3.13.1025-node20@sha256:7598f2936e61aa682daf6273eff6b67312a20c9bb908f217567d62381f843275
+  image: registry.gitlab.com/thelabnyc/python:3.13.1031-node20@sha256:c58f7e2cb03a4eb3b9372e46b9f7bc86d49643bda619ea40b8bdf5be9d1e6e26
   before_script:
     - npm ci
   variables:
