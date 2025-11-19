@@ -26,6 +26,10 @@
             "versioning": "regex:^ubuntu.+blender(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
         },
         {
+            "matchUpdateTypes": ["pin", "pinDigest", "digest"],
+            "groupName": "docker-digest"
+        },
+        {
             "matchCurrentVersion": ">=8.0.0",
             "matchDatasources": ["npm"],
             "matchPackageNames": ["typed-scss-modules"],
