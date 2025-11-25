@@ -43,6 +43,19 @@
             "replacementVersion": "3.0.1"
         },
         {
+            "matchDatasources": ["npm"],
+            "matchPackageNames": [
+                "@tsconfig/node10",
+                "@tsconfig/node12",
+                "@tsconfig/node14",
+                "@tsconfig/node16",
+                "@tsconfig/node18",
+                "@tsconfig/node20"
+            ],
+            "replacementName": "@tsconfig/node22",
+            "replacementVersion": "22.0.5"
+        },
+        {
             "matchPackageNames": ["hashicorp/terraform"],
             "allowedVersions": "<=1.5.7"
         },
