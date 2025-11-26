@@ -16,7 +16,7 @@
             "rangeStrategy": "replace"
         },
         {
-            "matchDepNames": ["python"],
+            "matchPackageNames": ["/python/"],
             "allowedVersions": "<=3.13",
             "rangeStrategy": "replace"
         },
