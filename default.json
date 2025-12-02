@@ -60,9 +60,12 @@
             "allowedVersions": "<=1.5.7"
         },
         {
-            "matchPackageNames": ["/python/"],
-            "matchUpdateTypes": ["digest"],
-            "groupName": "docker-python"
+            "matchDepNames": ["python", "/python/"],
+            "groupName": "python"
+        },
+        {
+            "matchDepNames": ["node"],
+            "groupName": "node"
         },
         {
             "matchPackageNames": ["/eslint/"],
