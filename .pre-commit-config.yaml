@@ -20,3 +20,15 @@ repos:
     rev: "v3.6.2"
     hooks:
       - id: prettier
+
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: "42.35.1"
+    hooks:
+      - id: renovate-config-validator
+        args:
+          - --strict
+          - application.json
+          - application-non-lts.json
+          - default.json
+          - renovate.json
+          - library.json
