@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This repository contains shareable [Renovate](https://docs.renovatebot.com/) configuration presets for TheLab projects. Renovate is a dependency update automation tool. Projects can extend these presets to get standardized dependency update behavior.
+This repository contains shareable [Renovate](https://docs.renovatebot.com/) configuration presets for thelab projects. Renovate is a dependency update automation tool. Projects can extend these presets to get standardized dependency update behavior.
 
 ## Available Presets
 

@@ -141,6 +141,18 @@
             "matchUpdateTypes": ["major"],
             "dependencyDashboardApproval": false
         },
+        // Skip minimum release age for packages maintained by thelab
+        {
+            "description": "Disable minimumReleaseAge for thelab-maintained packages",
+            "matchPackageNames": [
+                "@thelabnyc/**",
+                "/^registry\\.gitlab\\.com\\/thelabnyc\\//",
+                "/^gitlab\\.com\\/thelabnyc\\//",
+                "/^https:\\/\\/gitlab\\.com\\/thelabnyc\\//",
+                "/thelabnyc/"
+            ],
+            "minimumReleaseAge": null
+        },
         // Auto-merge low-risk updates (patches, pins, digests, lock file maintenance)
         {
             "matchUpdateTypes": [
