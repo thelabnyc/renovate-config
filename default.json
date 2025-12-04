@@ -92,6 +92,19 @@
             "replacementName": "@tsconfig/node22",
             "replacementVersion": "22.0.5"
         },
+        // Replace psycopg2 with its successor psycopg (psycopg3)
+        {
+            "matchDatasources": ["pypi"],
+            "matchPackageNames": ["psycopg2"],
+            "replacementName": "psycopg",
+            "replacementVersion": "3.2.3"
+        },
+        {
+            "matchDatasources": ["pypi"],
+            "matchPackageNames": ["psycopg2-binary"],
+            "replacementName": "psycopg[binary]",
+            "replacementVersion": "3.2.3"
+        },
         // Pin Terraform to last open-source version before BSL license change
         {
             "matchPackageNames": ["hashicorp/terraform"],
