@@ -3,14 +3,47 @@
     "extends": ["config:best-practices"],
     "timezone": "America/New_York",
     "rangeStrategy": "bump",
+    // Dedupe npm dependencies and install twice to ensure lock file is
+    // correct (because npm is horribly buggy and needs that).
     "postUpdateOptions": ["npmDedupe", "npmInstallTwice"],
+    // Don't wait for GitLab approval rules before automerging
     "gitLabIgnoreApprovals": true,
+    // Use conventional commit format (feat:, fix:, chore:, etc.)
+    "semanticCommits": "enabled",
+    // Auto-close the dependency dashboard issue when all updates are resolved
+    "dependencyDashboardAutoclose": true,
+    // Wait 3 days before proposing new versions to avoid buggy/insecure releases
+    "minimumReleaseAge": "3 days",
+    // Limit to 3 PRs per hour to avoid overwhelming CI
+    "prHourlyLimit": 3,
+    // Require explicit approval via dependency dashboard for major updates
+    "major": {
+        "dependencyDashboardApproval": true
+    },
+    // Enable pre-commit hook file manager
+    "pre-commit": {
+        "enabled": true
+    },
+    // Enable git submodules manager
+    "git-submodules": {
+        "enabled": true
+    },
     "packageRules": [
+        // Include the GitLab PyPI registry for all Python packages
+        {
+            "matchDatasources": ["pypi"],
+            "registryUrls": [
+                "https://pypi.org/pypi/",
+                "https://gitlab.com/api/v4/groups/269576/-/packages/pypi/simple"
+            ]
+        },
+        // For npm packages, replace version ranges entirely (e.g., ^1.0.0 -> ^1.1.0)
         {
             "matchPackageNames": ["*"],
             "matchDatasources": ["npm"],
             "rangeStrategy": "replace"
         },
+        // Custom versioning for docker images
         {
             "matchDatasources": ["docker"],
             "matchPackageNames": [
@@ -25,10 +58,12 @@
             ],
             "versioning": "regex:^ubuntu.+blender(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
         },
+        // Group all Docker digest updates into a single MR to reduce noise
         {
             "matchUpdateTypes": ["pin", "pinDigest", "digest"],
             "groupName": "docker-digest"
         },
+        // Replace abandoned typed-scss-modules with thelab's maintained fork
         {
             "matchCurrentVersion": ">=8.0.0",
             "matchDatasources": ["npm"],
@@ -36,12 +71,14 @@
             "replacementName": "@thelabnyc/typed-scss-modules",
             "replacementVersion": "8.2.0"
         },
+        // Replace abandoned breakpoint-sass with thelab's maintained fork
         {
             "matchDatasources": ["npm"],
             "matchPackageNames": ["breakpoint-sass"],
             "replacementName": "@thelabnyc/breakpoint-sass",
             "replacementVersion": "3.0.1"
         },
+        // Migrate old @tsconfig/node* packages to current LTS version
         {
             "matchDatasources": ["npm"],
             "matchPackageNames": [
@@ -55,37 +92,69 @@
             "replacementName": "@tsconfig/node22",
             "replacementVersion": "22.0.5"
         },
+        // Pin Terraform to last open-source version before BSL license change
         {
             "matchPackageNames": ["hashicorp/terraform"],
             "allowedVersions": "<=1.5.7"
         },
+        // Group all Python version updates together
         {
             "matchDepNames": ["python", "/python/"],
             "groupName": "python"
         },
+        // Group all Node.js version updates together
         {
             "matchDepNames": ["node"],
             "groupName": "node"
         },
+        // Group all ESLint-related packages into a single MR
         {
             "matchPackageNames": ["/eslint/"],
             "groupName": "eslint"
         },
+        // Group boto packages and limit to weekly updates (they release constantly)
         {
             "matchPackageNames": ["/boto3/", "/botocore/"],
             "groupName": "boto",
             "schedule": ["before 8am on monday"]
         },
+        // Group thelabui packages together
         {
             "matchPackageNames": ["/thelabui/"],
             "groupName": "thelabui"
         },
+        // Group tox-related packages together
         {
             "matchPackageNames": ["/tox/"],
             "groupName": "tox"
+        },
+        // Skip major version approval for packages using date-based versioning
+        // (major bumps are just calendar changes, not breaking changes)
+        {
+            "matchPackageNames": [
+                "/certifi/",
+                "/django-bootstrap/",
+                "/pytz/",
+                "/tsisso/",
+                "/tzdata/"
+            ],
+            "matchUpdateTypes": ["major"],
+            "dependencyDashboardApproval": false
+        },
+        // Auto-merge low-risk updates (patches, pins, digests, lock file maintenance)
+        {
+            "matchUpdateTypes": [
+                "patch",
+                "pin",
+                "pinDigest",
+                "digest",
+                "lockFileMaintenance"
+            ],
+            "automerge": true
         }
     ],
     "customManagers": [
+        // Extract UV_VERSION from YAML files (e.g., CI configs)
         {
             "customType": "regex",
             "managerFilePatterns": ["/.+\\.yml$/"],

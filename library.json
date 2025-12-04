@@ -1,11 +1,13 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["gitlab>thelabnyc/renovate-config:default"],
+    // Run lock file maintenance weekly on Tuesdays
     "lockFileMaintenance": {
         "enabled": true,
         "schedule": ["before 9am on tuesday"]
     },
     "packageRules": [
+        // Pin Node to current LTS version and it's default npm version
         {
             "matchDepNames": ["npm"],
             "allowedVersions": "<=11"
@@ -15,15 +17,18 @@
             "allowedVersions": "<=22",
             "rangeStrategy": "replace"
         },
+        // Pin Python to older min-version for broader compatibility
         {
             "matchDepNames": ["python"],
             "allowedVersions": "<=3.11",
             "rangeStrategy": "replace"
         },
+        // Pin Django to oldest supported LTS version for broader compatibility
         {
             "matchDepNames": ["Django", "django"],
             "allowedVersions": "<=4.2"
         },
+        // Pin Wagtail to oldest supported LTS version for broader compatibility
         {
             "matchDepNames": ["wagtail"],
             "allowedVersions": "<=7.0"

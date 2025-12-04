@@ -1,11 +1,13 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": ["gitlab>thelabnyc/renovate-config:default"],
+    // Run lock file maintenance weekly on Wednesdays
     "lockFileMaintenance": {
         "enabled": true,
         "schedule": ["before 9am on wednesday"]
     },
     "packageRules": [
+        // Pin Node to current LTS version (22.x) and it's default npm version
         {
             "matchDepNames": ["npm"],
             "allowedVersions": "<=11"
@@ -15,6 +17,7 @@
             "allowedVersions": "<=22",
             "rangeStrategy": "replace"
         },
+        // Pin Python to current stable version (3.13)
         {
             "matchDepNames": ["python"],
             "allowedVersions": "<=3.13",
