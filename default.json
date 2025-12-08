@@ -87,10 +87,11 @@
                 "@tsconfig/node14",
                 "@tsconfig/node16",
                 "@tsconfig/node18",
-                "@tsconfig/node20"
+                "@tsconfig/node20",
+                "@tsconfig/node22"
             ],
-            "replacementName": "@tsconfig/node22",
-            "replacementVersion": "22.0.5"
+            "replacementName": "@tsconfig/node24",
+            "replacementVersion": "24.0.3"
         },
         // Replace psycopg2 with its successor psycopg (psycopg3)
         {

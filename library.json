@@ -14,19 +14,19 @@
         },
         {
             "matchDepNames": ["node.js", "node"],
-            "allowedVersions": "<=22",
+            "allowedVersions": "<=24",
             "rangeStrategy": "replace"
         },
         // Pin Python to older min-version for broader compatibility
         {
             "matchDepNames": ["python"],
-            "allowedVersions": "<=3.11",
+            "allowedVersions": "<=3.12",
             "rangeStrategy": "replace"
         },
         // Pin Django to oldest supported LTS version for broader compatibility
         {
             "matchDepNames": ["Django", "django"],
-            "allowedVersions": "<=4.2"
+            "allowedVersions": "<=5.2"
         },
         // Pin Wagtail to oldest supported LTS version for broader compatibility
         {
