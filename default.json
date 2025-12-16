@@ -135,7 +135,8 @@
         // Group thelabui packages together
         {
             "matchPackageNames": ["/thelabui/"],
-            "groupName": "thelabui"
+            "groupName": "thelabui",
+            "minimumReleaseAge": null
         },
         // Group tox-related packages together
         {
