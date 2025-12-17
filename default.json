@@ -141,6 +141,11 @@
             "groupName": "thelabui",
             "minimumReleaseAge": null
         },
+        {
+            "matchPackageNames": ["/tsischemas/"],
+            "groupName": "tsischemas",
+            "minimumReleaseAge": null
+        },
         // Group tox-related packages together
         {
             "matchPackageNames": ["/tox/"],
