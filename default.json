@@ -3,6 +3,9 @@
     "extends": ["config:best-practices"],
     "timezone": "America/New_York",
     "rangeStrategy": "bump",
+    // Run full npm install (not --package-lock-only) to ensure lock file
+    // metadata (peer, dev flags) matches what a real install produces.
+    "skipInstalls": false,
     // Dedupe npm dependencies and install twice to ensure lock file is
     // correct (because npm is horribly buggy and needs that).
     "postUpdateOptions": ["npmDedupe", "npmInstallTwice"],
