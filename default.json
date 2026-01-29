@@ -186,6 +186,13 @@
                 "lockFileMaintenance"
             ],
             "automerge": true
+        },
+        // Disable auto-merge for minor updates of Django and Wagtail
+        // (these frameworks can have breaking changes in minor versions)
+        {
+            "matchPackageNames": ["django", "Django", "wagtail"],
+            "matchUpdateTypes": ["minor"],
+            "automerge": false
         }
     ],
     "customManagers": [
