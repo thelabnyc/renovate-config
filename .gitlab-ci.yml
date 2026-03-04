@@ -1,21 +1,3 @@
-stages:
-  - lint
-
-.base_job: &base_job
-  image: registry.gitlab.com/thelabnyc/python:3.14-node24@sha256:59a8a9eaf8670536ec1bd732f6f308501ada57882edd85f05b4f170f363f2797
-  before_script:
-    - npm ci
-  variables:
-    NODE_ENV: development
-    PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
-
-lint:
-  <<: *base_job
-  stage: lint
-  needs: []
-  script:
-    - pip3 install pre-commit
-    - pre-commit run --all-files
-  cache:
-    paths:
-      - ${PRE_COMMIT_HOME}
+include:
+  - component: gitlab.com/thelabnyc/thelab-ci-components/review@0.8.3
+  - component: gitlab.com/thelabnyc/thelab-ci-components/precommit@0.8.3

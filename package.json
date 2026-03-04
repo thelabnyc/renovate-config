@@ -7,7 +7,7 @@
     "@thelabnyc/standards": "0.5.0"
   },
   "engines": {
-    "node": "^24.11.1",
+    "node": "^24.14.0",
     "npm": "^11.6.2"
   }
 }
