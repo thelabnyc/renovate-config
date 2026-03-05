@@ -3,6 +3,7 @@
     "extends": ["config:best-practices"],
     "timezone": "America/New_York",
     "rangeStrategy": "bump",
+    "labels": ["dependencies"],
     // Run full npm install (not --package-lock-only) to ensure lock file
     // metadata (peer, dev flags) matches what a real install produces.
     "skipInstalls": false,
