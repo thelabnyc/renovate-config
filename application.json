@@ -23,9 +23,9 @@
             "allowedVersions": "<=3.14",
             "rangeStrategy": "replace"
         },
-        // Pin Django to current LTS version (5.2 LTS)
+        // Pin Django and django-stubs to current LTS version (5.2 LTS)
         {
-            "matchDepNames": ["Django", "django"],
+            "matchDepNames": ["Django", "django", "/django-stubs/"],
             "allowedVersions": "<5.3"
         },
         // Pin Wagtail to current LTS version (7.0 LTS)
