@@ -25,7 +25,7 @@
         },
         // Pin Django to oldest supported LTS version for broader compatibility
         {
-            "matchDepNames": ["Django", "django"],
+            "matchDepNames": ["Django", "django", "/django-stubs/"],
             "allowedVersions": "<=5.2"
         },
         // Pin Wagtail to oldest supported LTS version for broader compatibility
