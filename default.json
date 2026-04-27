@@ -97,6 +97,39 @@
             "replacementName": "@tsconfig/node24",
             "replacementVersion": "24.0.3"
         },
+        // Replace pre-commit with prek
+        {
+            "matchDatasources": ["pypi"],
+            "matchPackageNames": ["pre-commit"],
+            "replacementName": "prek",
+            "replacementVersion": "0.3.11"
+        },
+        // Replace black with ruff (formatter + linter)
+        {
+            "matchDatasources": ["pypi"],
+            "matchPackageNames": ["black"],
+            "replacementName": "ruff",
+            "replacementVersion": "0.11.0"
+        },
+        {
+            "matchManagers": ["pre-commit"],
+            "matchPackageNames": ["psf/black", "psf/black-pre-commit-mirror"],
+            "replacementName": "astral-sh/ruff-pre-commit",
+            "replacementVersion": "v0.11.0"
+        },
+        // Replace flake8 with ruff
+        {
+            "matchDatasources": ["pypi"],
+            "matchPackageNames": ["flake8"],
+            "replacementName": "ruff",
+            "replacementVersion": "0.11.0"
+        },
+        {
+            "matchManagers": ["pre-commit"],
+            "matchPackageNames": ["PyCQA/flake8"],
+            "replacementName": "astral-sh/ruff-pre-commit",
+            "replacementVersion": "v0.11.0"
+        },
         // Replace psycopg2 with its successor psycopg (psycopg3)
         {
             "matchDatasources": ["pypi"],
