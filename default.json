@@ -130,6 +130,13 @@
             "replacementName": "astral-sh/ruff-pre-commit",
             "replacementVersion": "v0.11.0"
         },
+        // Replace ts-node with tsx
+        {
+            "matchDatasources": ["npm"],
+            "matchPackageNames": ["ts-node"],
+            "replacementName": "tsx",
+            "replacementVersion": "4.21.0"
+        },
         // Replace psycopg2 with its successor psycopg (psycopg3)
         {
             "matchDatasources": ["pypi"],
