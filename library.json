@@ -23,15 +23,17 @@
             "allowedVersions": "<=3.12",
             "rangeStrategy": "replace"
         },
-        // Pin Django to oldest supported LTS version for broader compatibility
+        // Allow Django up to current LTS but widen range to keep old LTS support
         {
             "matchDepNames": ["Django", "django", "/django-stubs/"],
-            "allowedVersions": "<=5.2"
+            "allowedVersions": "<5.3",
+            "rangeStrategy": "widen"
         },
-        // Pin Wagtail to oldest supported LTS version for broader compatibility
+        // Allow Wagtail up to current LTS but widen range to keep old LTS support
         {
             "matchDepNames": ["wagtail"],
-            "allowedVersions": "<=7.0"
+            "allowedVersions": "<7.5",
+            "rangeStrategy": "widen"
         }
     ]
 }

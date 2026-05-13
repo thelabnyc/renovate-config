@@ -28,10 +28,10 @@
             "matchDepNames": ["Django", "django", "/django-stubs/"],
             "allowedVersions": "<5.3"
         },
-        // Pin Wagtail to current LTS version (7.0 LTS)
+        // Pin Wagtail to current version (7.4)
         {
             "matchDepNames": ["wagtail"],
-            "allowedVersions": "<7.1"
+            "allowedVersions": "<7.5"
         }
     ]
 }
