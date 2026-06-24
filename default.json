@@ -62,10 +62,17 @@
             ],
             "versioning": "regex:^ubuntu.+blender(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
         },
-        // Group all Docker digest updates into a single MR to reduce noise
+        // Group all Docker digest updates into a single MR to reduce noise.
+        // recreateWhen: always is required to keep automerge working on the
+        // recurring docker-digest branch. The branch name and MR title are
+        // constant across iterations (digests have no version in the title),
+        // so by default Renovate finds the previously merged MR and disables
+        // automerge with "a matching MR was automerged previously", which
+        // forces every digest update to be merged manually.
         {
             "matchUpdateTypes": ["pin", "pinDigest", "digest"],
-            "groupName": "docker-digest"
+            "groupName": "docker-digest",
+            "recreateWhen": "always"
         },
         // Replace abandoned typed-scss-modules with thelab's maintained fork
         {
