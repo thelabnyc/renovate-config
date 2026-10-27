@@ -190,6 +190,12 @@
             "groupName": "zensical",
             "schedule": ["before 8am on monday"]
         },
+        // Self-hosted docs assets (mermaid, glightbox, fonts) update with Zensical
+        {
+            "matchFileNames": ["docs-vendor/package.json"],
+            "groupName": "zensical",
+            "schedule": ["before 8am on monday"]
+        },
         // Group thelabui packages together
         {
             "matchPackageNames": ["/thelabui/"],
