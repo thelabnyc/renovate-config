@@ -183,6 +183,13 @@
             "groupName": "boto",
             "schedule": ["before 8am on monday"]
         },
+        // Limit Zensical to weekly updates (it releases about twice a week)
+        {
+            "matchDatasources": ["pypi"],
+            "matchPackageNames": ["zensical"],
+            "groupName": "zensical",
+            "schedule": ["before 8am on monday"]
+        },
         // Group thelabui packages together
         {
             "matchPackageNames": ["/thelabui/"],
