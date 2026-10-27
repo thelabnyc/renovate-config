@@ -7,7 +7,7 @@
         "schedule": ["before 9am on tuesday"]
     },
     "packageRules": [
-        // Pin Node to current LTS version and it's default npm version
+        // Allow Node up to current LTS but widen range to keep old LTS support
         {
             "matchDepNames": ["npm"],
             "allowedVersions": "<=11"
@@ -15,7 +15,7 @@
         {
             "matchDepNames": ["node.js", "node", "@types/node"],
             "allowedVersions": "<=26",
-            "rangeStrategy": "replace"
+            "rangeStrategy": "widen"
         },
         // Pin Python to older min-version for broader compatibility
         {
