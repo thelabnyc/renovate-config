@@ -179,7 +179,7 @@
         },
         // Group all Python version updates together
         {
-            "matchDepNames": ["python", "/python/"],
+            "matchDepNames": ["python", "/python/", "!/python-/"],
             "groupName": "python"
         },
         // Group all Node.js version updates together

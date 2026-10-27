@@ -14,7 +14,7 @@
         },
         {
             "matchDepNames": ["node.js", "node", "@types/node"],
-            "allowedVersions": "<=24",
+            "allowedVersions": "<=26",
             "rangeStrategy": "replace"
         },
         // Pin Python to older min-version for broader compatibility

@@ -7,19 +7,19 @@
         "schedule": ["before 9am on wednesday"]
     },
     "packageRules": [
-        // Pin Node to current LTS version (24.x) and it's default npm version
+        // Pin Node to current LTS version (26.x) and it's default npm version
         {
             "matchDepNames": ["npm"],
             "allowedVersions": "<=11"
         },
         {
             "matchDepNames": ["node.js", "node", "@types/node"],
-            "allowedVersions": "<=24",
+            "allowedVersions": "<=26",
             "rangeStrategy": "replace"
         },
         // Pin Python to current stable version (3.13)
         {
-            "matchPackageNames": ["/python/", "!/^python-/"],
+            "matchPackageNames": ["/python/", "!/^(types-)?python-/"],
             "allowedVersions": "<=3.14",
             "rangeStrategy": "replace"
         },
