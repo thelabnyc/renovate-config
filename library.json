@@ -13,7 +13,7 @@
             "allowedVersions": "<=11"
         },
         {
-            "matchDepNames": ["node.js", "node"],
+            "matchDepNames": ["node.js", "node", "@types/node"],
             "allowedVersions": "<=24",
             "rangeStrategy": "replace"
         },

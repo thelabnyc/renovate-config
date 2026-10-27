@@ -13,13 +13,13 @@
             "allowedVersions": "<=11"
         },
         {
-            "matchDepNames": ["node.js", "node"],
+            "matchDepNames": ["node.js", "node", "@types/node"],
             "allowedVersions": "<=24",
             "rangeStrategy": "replace"
         },
         // Pin Python to current stable version (3.13)
         {
-            "matchPackageNames": ["/python/"],
+            "matchPackageNames": ["/python/", "!/^python-/"],
             "allowedVersions": "<=3.14",
             "rangeStrategy": "replace"
         },
