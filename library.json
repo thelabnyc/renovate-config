@@ -25,8 +25,14 @@
         },
         // Allow Django up to current LTS but widen range to keep old LTS support
         {
-            "matchDepNames": ["Django", "django", "/django-stubs/"],
+            "matchDepNames": ["Django", "django"],
             "allowedVersions": "<5.3",
+            "rangeStrategy": "widen"
+        },
+        // django-stubs 6.x partly supports Django 5.2 and is needed for mypy 2.4+
+        {
+            "matchDepNames": ["django-stubs", "django-stubs-ext"],
+            "allowedVersions": "<7",
             "rangeStrategy": "widen"
         },
         // Allow Wagtail up to current LTS but widen range to keep old LTS support

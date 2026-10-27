@@ -23,10 +23,15 @@
             "allowedVersions": "<=3.14",
             "rangeStrategy": "replace"
         },
-        // Pin Django and django-stubs to current LTS version (5.2 LTS)
+        // Pin Django to current LTS version (5.2 LTS)
         {
-            "matchDepNames": ["Django", "django", "/django-stubs/"],
+            "matchDepNames": ["Django", "django"],
             "allowedVersions": "<5.3"
+        },
+        // django-stubs 6.x partly supports Django 5.2 and is needed for mypy 2.4+
+        {
+            "matchDepNames": ["django-stubs", "django-stubs-ext"],
+            "allowedVersions": "<7"
         },
         // Pin Wagtail to current version (7.4)
         {
