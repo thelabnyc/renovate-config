@@ -161,20 +161,25 @@
             "matchPackageNames": ["hashicorp/terraform"],
             "allowedVersions": "<=1.5.7"
         },
+        // Temporary caps skip repos already past them. matchCurrentVersion is a regex,
+        // not a range, so unlocked ranges like ^9.0.0 still match. It ignores < bounds.
         // Temporary: eslint-plugin-react, -import and -jsx-a11y (used by
         // eslint-config-next) don't support ESLint 10 yet. Lift when they do.
         {
             "matchPackageNames": ["eslint", "@eslint/js"],
+            "matchCurrentVersion": "!/(^|[\\s,|])[~^=>v]*[1-9]\\d/",
             "allowedVersions": "<10"
         },
         // Temporary: botocore requires python-dateutil <3. Lift when it allows 3.
         {
             "matchPackageNames": ["python-dateutil"],
+            "matchCurrentVersion": "!/(^|[\\s,|])[~^=>v]*([3-9]|[1-9]\\d)/",
             "allowedVersions": "<3"
         },
         // Temporary: iframe-resizer 5+ is GPL-3.0 or paid. Lift if we buy a license.
         {
             "matchPackageNames": ["iframe-resizer", "iframe-resizer-react"],
+            "matchCurrentVersion": "!/(^|[\\s,|])[~^=>v]*([5-9]|[1-9]\\d)/",
             "allowedVersions": "<5"
         },
         // Group all Python version updates together
