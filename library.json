@@ -13,9 +13,15 @@
             "allowedVersions": "<=11"
         },
         {
-            "matchDepNames": ["node.js", "node"],
-            "allowedVersions": "<=24",
+            "matchDepNames": ["node.js", "node", "@types/node"],
+            "allowedVersions": "<=26",
             "rangeStrategy": "replace"
+        },
+        // Widen only the published engines range to keep old LTS support
+        {
+            "matchDepNames": ["node"],
+            "matchDepTypes": ["engines"],
+            "rangeStrategy": "widen"
         },
         // Pin Python to older min-version for broader compatibility
         {
@@ -25,8 +31,14 @@
         },
         // Allow Django up to current LTS but widen range to keep old LTS support
         {
-            "matchDepNames": ["Django", "django", "/django-stubs/"],
+            "matchDepNames": ["Django", "django"],
             "allowedVersions": "<5.3",
+            "rangeStrategy": "widen"
+        },
+        // django-stubs 6.x partly supports Django 5.2 and is needed for mypy 2.4+
+        {
+            "matchDepNames": ["django-stubs", "django-stubs-ext"],
+            "allowedVersions": "<7",
             "rangeStrategy": "widen"
         },
         // Allow Wagtail up to current LTS but widen range to keep old LTS support

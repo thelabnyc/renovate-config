@@ -20,10 +20,9 @@
     "minimumReleaseAge": "3 days",
     // Limit to 3 PRs per hour to avoid overwhelming CI
     "prHourlyLimit": 3,
-    // Require explicit approval via dependency dashboard for major updates
-    "major": {
-        "dependencyDashboardApproval": true
-    },
+    // Raised because majors open without approval. Majors share this limit with
+    // patch and minor MRs, so stale major MRs can hold up automerged updates.
+    "prConcurrentLimit": 20,
     // Enable pre-commit hook file manager
     "pre-commit": {
         "enabled": true
@@ -162,9 +161,29 @@
             "matchPackageNames": ["hashicorp/terraform"],
             "allowedVersions": "<=1.5.7"
         },
+        // Temporary caps only hold back repos still below them.
+        // Temporary: eslint-plugin-react, -import and -jsx-a11y (used by
+        // eslint-config-next) don't support ESLint 10 yet. Lift when they do.
+        {
+            "matchPackageNames": ["eslint", "@eslint/js"],
+            "matchCurrentVersion": "<10",
+            "allowedVersions": "<10"
+        },
+        // Temporary: botocore requires python-dateutil <3. Lift when it allows 3.
+        {
+            "matchPackageNames": ["python-dateutil"],
+            "matchCurrentVersion": "<3",
+            "allowedVersions": "<3"
+        },
+        // Temporary: iframe-resizer 5+ is GPL-3.0 or paid. Lift if we buy a license.
+        {
+            "matchPackageNames": ["iframe-resizer", "iframe-resizer-react"],
+            "matchCurrentVersion": "<5",
+            "allowedVersions": "<5"
+        },
         // Group all Python version updates together
         {
-            "matchDepNames": ["python", "/python/"],
+            "matchDepNames": ["python", "/python/", "!/python-/"],
             "groupName": "python"
         },
         // Group all Node.js version updates together
@@ -211,19 +230,6 @@
         {
             "matchPackageNames": ["/tox/"],
             "groupName": "tox"
-        },
-        // Skip major version approval for packages using date-based versioning
-        // (major bumps are just calendar changes, not breaking changes)
-        {
-            "matchPackageNames": [
-                "/certifi/",
-                "/django-bootstrap/",
-                "/pytz/",
-                "/tsisso/",
-                "/tzdata/"
-            ],
-            "matchUpdateTypes": ["major"],
-            "dependencyDashboardApproval": false
         },
         // Skip minimum release age for packages maintained by thelab
         {
