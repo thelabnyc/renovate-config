@@ -156,10 +156,16 @@
             "replacementName": "psycopg[binary]",
             "replacementVersion": "3.2.3"
         },
-        // Pin Terraform to last open-source version before BSL license change
+        // Last open-source Terraform before the BSL change. Also holds back
+        // `required_version` bumps in OpenTofu repos; stop those before removing.
         {
             "matchPackageNames": ["hashicorp/terraform"],
             "allowedVersions": "<=1.5.7"
+        },
+        // Keep OpenTofu on one exact version (mise.toml and annotated pins)
+        {
+            "matchPackageNames": ["opentofu/opentofu"],
+            "groupName": "opentofu"
         },
         // Temporary caps only hold back repos still below them.
         // Temporary: eslint-plugin-react, -import and -jsx-a11y (used by
