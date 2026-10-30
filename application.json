@@ -23,6 +23,18 @@
             "allowedVersions": "<=3.14",
             "rangeStrategy": "replace"
         },
+        // npm semver reads a docker tag suffix (3.14.3459-node24-geospatial)
+        // as a prerelease, which never satisfies the ranges above.
+        {
+            "matchDatasources": ["docker"],
+            "matchDepNames": ["node"],
+            "allowedVersions": "!/^(2[7-9]|[3-9]\\d)(\\D|$)/"
+        },
+        {
+            "matchDatasources": ["docker"],
+            "matchPackageNames": ["/python/", "!/^(types-)?python-/"],
+            "allowedVersions": "!/^3\\.(1[5-9]|[2-9]\\d)(\\D|$)/"
+        },
         // Pin Django to current LTS version (5.2 LTS)
         {
             "matchDepNames": ["Django", "django"],

@@ -29,6 +29,18 @@
             "allowedVersions": "<=3.12",
             "rangeStrategy": "replace"
         },
+        // npm semver reads a docker tag suffix (3.12.12-slim-trixie) as a
+        // prerelease, which never satisfies the ranges above.
+        {
+            "matchDatasources": ["docker"],
+            "matchDepNames": ["node"],
+            "allowedVersions": "!/^(2[7-9]|[3-9]\\d)(\\D|$)/"
+        },
+        {
+            "matchDatasources": ["docker"],
+            "matchDepNames": ["python"],
+            "allowedVersions": "!/^3\\.(1[3-9]|[2-9]\\d)(\\D|$)/"
+        },
         // Allow Django up to current LTS but widen range to keep old LTS support
         {
             "matchDepNames": ["Django", "django"],
