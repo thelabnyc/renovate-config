@@ -63,6 +63,11 @@
             "matchDepNames": ["wagtail"],
             "allowedVersions": "<7.5",
             "rangeStrategy": "widen"
+        },
+        // wagtail-stubs X.Y requires Wagtail X.Y
+        {
+            "matchDepNames": ["wagtail-stubs"],
+            "allowedVersions": "<7.5"
         }
     ]
 }
